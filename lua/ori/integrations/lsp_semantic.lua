@@ -1,0 +1,91 @@
+return function(opts, colors)
+  local semantic = {}
+
+  if opts.integrations.lsp_semantic then
+    semantic = {
+      ['@lsp.type.class'] = { link = '@module' },
+      ['@lsp.type.comment'] = { fg = colors.none },
+      ['@lsp.type.decorator'] = { link = '@function.macro' },
+      ['@lsp.type.enum'] = { link = 'Type' },
+      ['@lsp.type.enumMember'] = { link = '@constant' },
+      ['@lsp.type.event'] = { link = 'WarningMsg' },
+      ['@lsp.type.function'] = { link = 'Function' },
+      ['@lsp.type.interface'] = { link = 'Type' },
+      ['@lsp.type.keyword'] = { link = '@keyword' },
+      ['@lsp.type.macro'] = { link = '@constant.macro' },
+      ['@lsp.type.method'] = { link = '@method' },
+      ['@lsp.type.modifier'] = { fg = colors.low_purple },
+      ['@lsp.type.namespace'] = { link = '@namespace' },
+      ['@lsp.type.number'] = { link = '@number' },
+      ['@lsp.type.operator'] = { link = '@operator' },
+      ['@lsp.type.parameter'] = { link = '@parameter' },
+      ['@lsp.type.property'] = { link = '@property' },
+      ['@lsp.type.regexp'] = { link = '@string.regex' },
+      ['@lsp.type.string'] = { link = '@string' },
+      ['@lsp.type.struct'] = { link = 'Type' },
+      ['@lsp.type.type'] = { fg = colors.low_olive },
+      ['@lsp.type.typeParameter'] = { link = '@parameter' },
+      ['@lsp.type.variable'] = { fg = colors.none },
+
+      ['@lsp.mod.abstract'] = { link = '@module' },
+      ['@lsp.mod.async'] = { fg = colors.red },
+      -- ['@lsp.mod.declaration'] = { link = 'Type' },
+      ['@lsp.mod.defaultLibrary'] = { link = '@function.builtin' },
+      -- ['@lsp.mod.definition'] = { link = 'Function' },
+      ['@lsp.mod.deprecated'] = { link = 'DiagnosticDeprecated' },
+      ['@lsp.mod.documentation'] = { fg = colors.low_gray, style = opts.styles.keywords },
+      ['@lsp.mod.modification'] = { link = '@keyword.modifier' },
+      ['@lsp.mod.readonly'] = { sp = colors.border, style = opts.styles.readonly },
+      -- ['@lsp.mod.static'] = { fg = colors.purple },
+
+      ['@lsp.typemod.event.static'] = { fg = colors.low_purple },
+      ['@lsp.typemod.string.static'] = { fg = colors.low_green },
+      -- ['@lsp.typemod.function.defaultLibrary'] = { link = '@function.builtin' },
+      -- ['@lsp.typemod.method.defaultLibrary'] = { link = '@function.builtin' },
+      -- ['@lsp.typemod.variable.defaultLibrary'] = { link = '@module.builtin' },
+    }
+  else
+    semantic = {
+      ['@lsp.type.class'] = {},
+      ['@lsp.type.comment'] = {},
+      ['@lsp.type.decorator'] = {},
+      ['@lsp.type.enum'] = {},
+      ['@lsp.type.enumMember'] = {},
+      ['@lsp.type.event'] = {},
+      ['@lsp.type.function'] = {},
+      ['@lsp.type.interface'] = {},
+      ['@lsp.type.keyword'] = {},
+      ['@lsp.type.macro'] = {},
+      ['@lsp.type.method'] = {},
+      ['@lsp.type.modifier'] = {},
+      ['@lsp.type.namespace'] = {},
+      ['@lsp.type.number'] = {},
+      ['@lsp.type.operator'] = {},
+      ['@lsp.type.parameter'] = {},
+      ['@lsp.type.property'] = {},
+      ['@lsp.type.regexp'] = {},
+      ['@lsp.type.string'] = {},
+      ['@lsp.type.struct'] = {},
+      ['@lsp.type.type'] = {},
+      ['@lsp.type.typeParameter'] = {},
+      ['@lsp.type.variable'] = {},
+
+      ['@lsp.mod.abstract'] = {},
+      ['@lsp.mod.async'] = {},
+      ['@lsp.mod.declaration'] = {},
+      ['@lsp.mod.defaultLibrary'] = {},
+      ['@lsp.mod.definition'] = {},
+      ['@lsp.mod.deprecated'] = {},
+      ['@lsp.mod.documentation'] = {},
+      ['@lsp.mod.modification'] = {},
+      ['@lsp.mod.readonly'] = {},
+      ['@lsp.mod.static'] = {},
+
+      -- ['@lsp.typemod.function.defaultLibrary'] = {},
+      -- ['@lsp.typemod.method.defaultLibrary'] = {},
+      -- ['@lsp.typemod.variable.defaultLibrary'] = {},
+    }
+  end
+
+  return semantic
+end

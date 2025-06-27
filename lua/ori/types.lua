@@ -1,0 +1,21 @@
+---@meta
+
+---@class UserSpec
+---@field background? string
+---@field enable_usercmd? boolean
+---@field fade_nc? boolean
+---@field transparent? string[]
+---@field styles {[string]:string}
+---@field disable {[string]:boolean}
+---@field integrations {[string]:boolean}
+
+---@class Options
+---@field enable_usercmd boolean
+---@field fade_nc boolean
+---@field background? string
+---@field theme {light:string, dark:string}
+---@field transparent string[]
+---@field disable {[string]:string}
+---@field style {[string]:string}
+---@field integ {[string]:boolean}
+---@field user_integ {[string]:boolean}
