@@ -66,8 +66,8 @@ the plugin has the following component colors:
 |fg          | foreground                   |
 |bg          | background                   |
 |high_xxx    | high basic colors            |
-|low_xxx     | low basic color              |
-|shade_xxx   | basic color for background   |
+|low_xxx     | low basic colors             |
+|shade_xxx   | basic colors for background  |
 |nc          | non-current buffer background|
 |float       | float window                 |
 |border      | buffer border line           |
@@ -185,8 +185,10 @@ require("ori").setup({
         telescope = false,
     },
     -- User's own specified plugins highlight groups
-    -- Set the plugin name and value in the same way as the "integrations" table
-    -- You can also set a value other than nil or false and use it as a flag
+    -- Set the plugin name and value in the same way as the "integrations" table.
+    -- Place the color scheme settings under `ori.nvim/lua/ori/integrations/user/`
+    -- as `<plugin-name>.lua`.
+    -- You can also set a value other than nil or false and use it as a flag.
     user_integrations = {},
 })
 ```
