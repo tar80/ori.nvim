@@ -64,10 +64,13 @@ function M.get_highlights(opts, colors, custom_highlights)
       _get_hlgroups('lsp_semantic')
     end
   end
+  if opts.integrations.nightly == true then
+    _get_hlgroups('nightly')
+  end
   local plugins = vim.iter(pairs(_integrations)):fold({}, function(p, name, value)
     if value then
       local _mod = mod(name, opts)(opts, colors, p)
-      if not vim.tbl_isempty(_mod) then
+      if type(_mod) == 'table' and not vim.tbl_isempty(_mod) then
         p = _mod
       end
     end
