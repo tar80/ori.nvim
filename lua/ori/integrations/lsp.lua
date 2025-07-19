@@ -4,7 +4,7 @@ return function(opts, colors)
     LspReferenceRead = { bg = colors.shade_gray, style = opts.styles.references },
     LspReferenceWrite = { bg = colors.shade_gray, style = opts.styles.references },
     LspReferenceTarget = { bg = colors.highlight },
-    LspInlayHint = { fg = colors.low_gray, style = 'italic,bold' },
+    LspInlayHint = { fg = colors.low_gray, bg = colors.shade_gray, style = 'italic,bold' },
     LspCodeLens = { fg = colors.high_gray },
     --TODO:testing
     LspCodeLensSeparator = { fg = colors.purple, bg = colors.shade_purple },
