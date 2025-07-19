@@ -44,12 +44,12 @@ return function(opts, colors)
     diffAdded = { fg = colors.green },
     diffChanged = { fg = colors.green },
     diffRemoved = { fg = colors.red },
-    diffFile = { fg = colors.blue },
-    diffNewFile = { link = 'Added' },
-    diffOldFile = { link = 'Removed' },
+    diffFile = { fg = colors.bg, bg = colors.blue },
+    diffNewFile = { fg = colors.high_cyan, bg = colors.shade_gray },
+    diffOldFile = { fg = colors.high_red, bg = colors.shade_gray },
     diffSubname = { fg = colors.low_purple },
-    diffLine = { fg = colors.purple },
-    diffIndexLine = { fg = colors.orange },
+    diffLine = { fg = colors.purple, bg = colors.shade_purple },
+    diffIndexLine = { fg = colors.orange, bg = colors.shade_gray },
     diffComment = { link = 'comment' },
   }
 end
