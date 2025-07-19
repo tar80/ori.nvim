@@ -73,6 +73,8 @@ the plugin has the following component colors:
 |border      | buffer border line           |
 |selection   | visual selection             |
 |highlight   | highlight texts              |
+|match       | match item color             |
+|matchsub    | sub-match item color         |
 |diff_add    | added diff range             |
 |diff_change | changed diff range           |
 |diff_remove | removed diff range           |
