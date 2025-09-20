@@ -3,5 +3,7 @@ return function(opts, colors)
     DiffTextAdd = { bg = colors.diff_add },
     StderrMsg = { link = 'ErrorMsg' },
     StdoutMsg = { link = 'ModeMsg' },
+    SnippetTabstop = { bg = colors.matchsub },
+    SnippetTabstopActive = { bg = colors.match },
   }
 end
