@@ -158,6 +158,7 @@ require("ori").setup({
         nightly = false, -- hlgroups available in nightly build
 
         -- maintained hlgroups
+        blink = false,
         cmp = false,
         dap = false,
         dap_virtual_text = false,
@@ -168,7 +169,7 @@ require("ori").setup({
         matchwith = false,
         mini_diff = false,
         mini_icons = false,
-        nvim_treesitter = false,
+        nvim_treesitter = false, ---@depricated
         render_markdown = false,
         rereope = false,
         sandwich = false,
