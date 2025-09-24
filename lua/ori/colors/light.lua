@@ -1,4 +1,3 @@
--- coment
 local colors = {
   fg = '#525252',
   bg = '#FFFFFF',

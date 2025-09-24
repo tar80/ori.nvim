@@ -4,6 +4,6 @@ return function(opts, colors)
     StderrMsg = { link = 'ErrorMsg' },
     StdoutMsg = { link = 'ModeMsg' },
     SnippetTabstop = { bg = colors.matchsub },
-    SnippetTabstopActive = { bg = colors.match },
+    SnippetTabstopActive = { bg = colors.shade_purple },
   }
 end
