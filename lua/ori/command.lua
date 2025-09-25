@@ -53,13 +53,16 @@ end
 ---@param opts HarmonizeOptions
 function M.harmonize_palette(palette, bg_hex, opts)
   local match_ratio = { h = 1, s = 0.2, l = opts.l }
-  local new_palette = { 'local palette = {' }
+  local new_palette = {
+    ('-- %s, h:%s, s:%s, l:%s'):format(bg_hex, opts.h, opts.s, opts.l),
+    'local palette = {',
+  }
   local fmt_rgb = '  %s = "#%02x%02x%02x",'
   local fmt_hex = '  %s = "%s",'
   local rgx = vim.regex([[^\(shade\|diff\|nc\|float\|selection\|border\)]])
   local base_rgb = hl.to_rgb(bg_hex)
   local base_hsl = hsluv.rgb_to_hsluv(base_rgb)
-  local combine = hl.combine(opts.mode)
+  local combine = hl.combine(opts.mode, 0.7)
 
   if palette.bg then
     table.insert(new_palette, fmt_hex:format('bg', bg_hex))
