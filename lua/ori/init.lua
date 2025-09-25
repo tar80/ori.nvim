@@ -51,10 +51,11 @@ function ori.load(name)
   vim.go.termguicolors = true
   vim.g.colors_name = 'ori'
   vim.g.ori_palette = palette
-  if type(opts.custom_highlights) == 'function' then
-    opts.custom_highlights = opts.custom_highlights(opts,colors)
+  local user_highlights = opts.custom_highlights
+  if type(user_highlights) == 'function' then
+    user_highlights = opts.custom_highlights(opts, colors)
   end
-  local custom_highlights = opts.custom_highlights[vim.go.background] or {}
+  local custom_highlights = user_highlights[vim.go.background] or {}
   local highlights = integrations.get_highlights(opts, colors, custom_highlights)
   if #opts.transparent > 0 then
     vim.iter(opts.transparent):each(function(v)
