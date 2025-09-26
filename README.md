@@ -159,7 +159,6 @@ require("ori").setup({
 
         -- maintained hlgroups
         blink = false,
-        cmp = false,
         dap = false,
         dap_virtual_text = false,
         flash = false,
@@ -170,6 +169,7 @@ require("ori").setup({
         mini_diff = false,
         mini_icons = false,
         nvim_treesitter = false, ---@depricated
+        quicker = false,
         render_markdown = false,
         rereope = false,
         sandwich = false,
@@ -179,6 +179,7 @@ require("ori").setup({
         trouble = false,
 
         -- unmaintained hlgroups
+        cmp = false,
         conflict_marker = false,
         fuzzy_motion = false,
         lspsaga = false,
