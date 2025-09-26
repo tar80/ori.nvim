@@ -43,9 +43,10 @@ function M.adjust_contrast(hex, scale, contrast)
 end
 
 ---@param mode string 'light' or 'dark'
----@param intensity integer Color correction intensity
+---@param intensity? integer Color correction intensity
 ---@return function fun(target:RGB,base:RGB):R,G,B
 function M.combine(mode, intensity)
+  intensity = intensity or 1
   local function _combine_light(target, base)
     return math.max(0, target[1] - (255 - base[1]) * intensity),
       math.max(0, target[2] - (255 - base[2]) * intensity),
