@@ -30,9 +30,9 @@ return function(opts, colors, p)
   p['GitSignsDeleteVirtLn'] = { link = 'DiffDelete' }
   -- p['GitSignsDeleteVirtLnInline'] = { link = 'GitSignsDeleteVirtLn' }
   -- p['GitSignsDeleteVirtLnum'] = { link = 'GitSignsDeleteVirtLn' }
-  p['GitSignsStagedAdd'] = { fg = colors.low_blue, bg = colors.shade_blue }
-  p['GitSignsStagedChange'] = { fg = colors.low_green, bg = colors.shade_green }
-  p['GitSignsStagedDelete'] = { fg = colors.low_red, bg = colors.shade_red }
+  p['GitSignsStagedAdd'] = { fg = colors.high_blue, bg = colors.shade_blue, style = 'bold' }
+  p['GitSignsStagedChange'] = { fg = colors.high_green, bg = colors.shade_green, style = 'bold' }
+  p['GitSignsStagedDelete'] = { fg = colors.high_red, bg = colors.shade_red, style = 'bold' }
 
   return p
 end
