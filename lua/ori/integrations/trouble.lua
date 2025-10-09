@@ -19,33 +19,33 @@ return function(opts, colors, p)
   p['TroubleCount'] = { fg = colors.purple }
   p['TroubleDirectory'] = { link = 'Directory' }
   p['TroubleFileName'] = { link = 'Directory' }
-  p['TroubleIconArray'] = { link = '@punctuation.bracket' }
-  p['TroubleIconBoolean'] = { link = '@boolean' }
-  p['TroubleIconClass'] = { link = '@type' }
-  p['TroubleIconConstant'] = { link = '@constant' }
-  p['TroubleIconConstructor'] = { link = '@constructor' }
+  p['TroubleIconArray'] = { fg = colors.low_olive }
+  p['TroubleIconBoolean'] = { link = 'Boolean' }
+  p['TroubleIconClass'] = { link = 'Type' }
+  p['TroubleIconConstant'] = { link = 'Constant' }
+  p['TroubleIconConstructor'] = { fg = colors.olive }
   p['TroubleIconDirectory'] = { link = 'Special' }
   p['TroubleIconEnum'] = { link = '@lsp.type.enum' }
   p['TroubleIconEnumMember'] = { link = '@lsp.type.enumMember' }
   p['TroubleIconEvent'] = { link = 'Special' }
-  p['TroubleIconField'] = { link = '@variable.member' }
+  p['TroubleIconField'] = { fg = colors.blue, style = opts.styles.variables }
   p['TroubleIconFile'] = { link = 'TroubleNormal' }
-  p['TroubleIconFunction'] = { link = '@function' }
+  p['TroubleIconFunction'] = { link = 'Function' }
   p['TroubleIconInterface'] = { link = '@lsp.type.interface' }
   p['TroubleIconKey'] = { link = '@lsp.type.keyword' }
-  p['TroubleIconMethod'] = { link = '@function.method' }
-  p['TroubleIconModule'] = { link = '@module' }
-  p['TroubleIconNamespace'] = { link = '@module' }
-  p['TroubleIconNull'] = { link = '@constant.builtin' }
-  p['TroubleIconNumber'] = { link = '@number' }
-  p['TroubleIconObject'] = { link = '@constant' }
-  p['TroubleIconOperator'] = { link = '@operator' }
-  p['TroubleIconPackage'] = { link = '@module' }
-  p['TroubleIconProperty'] = { link = '@property' }
-  p['TroubleIconString'] = { link = '@string' }
+  p['TroubleIconMethod'] = { link = 'Function' }
+  p['TroubleIconModule'] = { fg = colors.olive }
+  p['TroubleIconNamespace'] = { fg = colors.olive }
+  p['TroubleIconNull'] = { fg = colors.cyan }
+  p['TroubleIconNumber'] = { link = 'Number' }
+  p['TroubleIconObject'] = { link = 'Constant' }
+  p['TroubleIconOperator'] = { link = 'Operator' }
+  p['TroubleIconPackage'] = { fg = colors.olive }
+  p['TroubleIconProperty'] = { fg = colors.blue }
+  p['TroubleIconString'] = { fg = colors.green, style = opts.styles.strings }
   p['TroubleIconStruct'] = { link = '@lsp.type.struct' }
   p['TroubleIconTypeParameter'] = { link = '@lsp.type.typeParameter' }
-  p['TroubleIconVariable'] = { link = '@variable' }
+  p['TroubleIconVariable'] = { fg = colors.fg, style = opts.styles.variables }
   p['TroubleIndent'] = { fg = colors.low_gray }
   p['TroubleIndentFoldClosed'] = { link = 'CursorLineNr' }
   p['TroubleIndentFoldOpen'] = { link = 'TroubleIndent' }
