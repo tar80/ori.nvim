@@ -1,6 +1,5 @@
 return function(opts, colors)
   return {
-    ['@Macro'] = { link = 'Macro' },
     ['@attribute'] = { fg = colors.red },
     ['@boolean'] = { link = 'Boolean' },
     ['@character'] = { link = 'Character' },
