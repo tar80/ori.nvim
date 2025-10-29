@@ -46,8 +46,8 @@ return function(opts, colors, p)
   p['BlinkCmpKindValue'] = { fg = colors.low_purple }
   p['BlinkCmpKindCodeum'] = { fg = colors.purple }
   p['BlinkCmpKindCopilot'] = { fg = colors.green }
-  p['BlincCmpKindSupermaven'] = { fg = colors.orange }
-  p['BlincCmpKindTabNine'] = { fg = colors.blue }
+  p['BlinkCmpKindSupermaven'] = { fg = colors.orange }
+  p['BlinkCmpKindTabNine'] = { fg = colors.blue }
 
   return p
 end

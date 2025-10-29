@@ -208,7 +208,7 @@ function M.setup(UNIQUE_NAME, DEFAULT_PALETTES)
       local err = vim.fn.delete(path)
       local msg = err == 1 and 'Could not delete the palette.' or 'Deleted.'
 
-      _notify(msg, 'ERROR')
+      _notify(msg, 'INFO')
     end)
   end, { desc = 'Delete a color palette' })
 end
