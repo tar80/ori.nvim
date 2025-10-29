@@ -8,7 +8,7 @@ return function(opts, colors)
     LspCodeLens = { fg = colors.high_gray },
     --TODO:testing
     LspCodeLensSeparator = { fg = colors.purple, bg = colors.shade_purple },
-    LspSignatureActiveParameter = { fg = colors.match, bg = colors.shade_cyan, style = 'bold' },
+    LspSignatureActiveParameter = { fg = colors.match, bg = colors.shade_purple, style = 'bold,reverse' },
 
     DiagnosticError = { fg = colors.error, style = opts.styles.virtualtext },
     DiagnosticWarn = { fg = colors.warn, style = opts.styles.virtualtext },

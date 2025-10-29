@@ -3,7 +3,7 @@ return function(opts, colors, p)
   -- p['RenderMarkdownCodeInline'] = { link = 'RenderMarkdownCode' }
   p['RenderMarkdownH1Bg'] = { fg = colors.bg, bg = colors.high_cyan, style = 'bold' }
   p['RenderMarkdownH2Bg'] = { fg = colors.bg, bg = colors.cyan, style = 'bold' }
-  p['RenderMarkdownH3Bg'] = { fg = colors.fg, bg = colors.low_cyan, style = 'bold' }
+  p['RenderMarkdownH3Bg'] = { fg = colors.bg, bg = colors.low_cyan, style = 'bold' }
   p['RenderMarkdownH4Bg'] = { fg = colors.fg, bg = colors.shade_cyan, style = 'bold' }
   p['RenderMarkdownH5Bg'] = { fg = colors.fg, bg = colors.shade_cyan, style = 'bold' }
   p['RenderMarkdownH6Bg'] = { fg = colors.fg, bg = colors.shade_cyan, style = 'bold' }

@@ -44,7 +44,7 @@ return function(opts, colors)
     ['@markup.heading']  = { fg = colors.bg, bg = colors.fg, style = 'bold' },
     ['@markup.heading.1'] = { fg = colors.bg, bg = colors.high_cyan, style = 'bold' },
     ['@markup.heading.2'] = { fg = colors.bg, bg = colors.cyan, style = 'bold' },
-    ['@markup.heading.3'] = { fg = colors.fg, bg = colors.low_cyan, style = 'bold' },
+    ['@markup.heading.3'] = { fg = colors.bg, bg = colors.low_cyan, style = 'bold' },
     ['@markup.heading.4'] = { fg = colors.fg, bg = colors.shade_cyan, style = 'bold' },
     ['@markup.heading.5'] = { fg = colors.fg, bg = colors.shade_cyan, style = 'bold' },
     ['@markup.heading.6'] = { fg = colors.fg, bg = colors.shade_cyan, style = 'bold' },
