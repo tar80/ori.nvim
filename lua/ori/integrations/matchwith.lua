@@ -6,6 +6,7 @@ return function(opts, colors, p)
   p['MatchwithParent'] = { bg = colors.shade_cyan, style = 'bold' }
   p['MatchwithParentOut'] = { bg = colors.shade_purple, style = 'bold' }
   p['MatchwithSign'] = { fg = colors.hint, style = 'bold' }
+  p['MatchwithWord'] = { bg = colors.shade_cyan }
 
   return p
 end
