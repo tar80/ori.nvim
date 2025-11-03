@@ -13,48 +13,6 @@ Here are some sample palettes.
 
 ![palettes](https://github.com/user-attachments/assets/b7beda9c-53b0-4a9e-8cdb-ea140867c757)
 
-<!-- muted: -->
-<!--     mode       : light -->
-<!--     bg_hex     : #FEFEFF -->
-<!--     hue        : 0.01 -->
-<!--     saturation : -0.2 -->
-<!--     luminance  : -0.1 -->
-<!---->
-<!-- faded: -->
-<!--     mode       : dark -->
-<!--     bg_hex     : #000102 -->
-<!--     hue        : 0.01 -->
-<!--     saturation : -0.2 -->
-<!--     luminance  : -0.1 -->
-<!---->
-<!-- mint: -->
-<!--     mode       : light -->
-<!--     bg_hex     : #E1FFF4 -->
-<!--     hue        : 0.1 -->
-<!--     saturation : 0 -->
-<!--     luminance  : -0.05 -->
-<!---->
-<!-- cinnamon: -->
-<!--     mode       : light -->
-<!--     bg_hex     : #F3ECE7 -->
-<!--     hue        : 0.15 -->
-<!--     saturation : -0.2 -->
-<!--     luminance  : -0.2 -->
-<!---->
-<!-- mallow -->
-<!--     mode       : dark -->
-<!--     bg_hex     : #07171F -->
-<!--     hue        : 0.1 -->
-<!--     saturation : -0.1 -->
-<!--     luminance  : 0 -->
-<!---->
-<!-- beet: -->
-<!--     mode       : dark -->
-<!--     bg_hex     : #1D0A11 -->
-<!--     hue        : 0.2 -->
-<!--     saturation : -0.2 -->
-<!--     luminance  : 0 -->
-
 ### Palette colors
 
 In addition to the eight basic colors  
@@ -173,6 +131,7 @@ require("ori").setup({
         render_markdown = false,
         rereope = false,
         sandwich = false,
+        skkeleton_henkan_highlight = false,
         skkeleton_indicator = false,
         snacks = false,
         staba = false,
