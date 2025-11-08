@@ -11,9 +11,9 @@ return function(opts, colors, p)
   p['BlinkCmpLabelDescription'] = { link = 'PmenuExtra' }
   p['BlinkCmpSource'] = { fg = '#888800' } --TODO;check
   p['BlinkCmpGhostText'] = { fg = colors.low_gray, style = 'italic' }
-  -- p['BlinkCmpDoc'] = { link = 'NormalFloat' }
-  -- p['BlinkCmpDocBorder'] = { link = 'NormalFloat' }
-  -- p['BlinkCmpDocSeparator'] = { link = 'NormalFloat' }
+  p['BlinkCmpDoc'] = { bg = colors.shade_blue }
+  p['BlinkCmpDocBorder'] = { fg = colors.blue }
+  p['BlinkCmpDocSeparator'] = { fg = colors.blue, colors.shade_blue }
   -- p['BlinkCmpDocCursorLine'] = { link = 'Visual' }
   -- p['BlinkCmpSignatureHelp'] = { link = 'NormalFloat' }
   -- p['BlinkCmpSignatureHelpBorder'] = { link = 'NormalFloat' }

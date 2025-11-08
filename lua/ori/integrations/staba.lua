@@ -17,6 +17,7 @@ return function(opts, colors, p)
   p['StabaSpecial'] = { fg = colors.high_olive, sp = colors.border }
   p['StabaReadonly'] = { fg = colors.low_gray, sp = colors.border }
   p['StabaModified'] = { fg = colors.high_cyan, sp = colors.border }
+  p['StabaCopilot'] = { fg = colors.blue, sp = colors.border }
   p['StabaSignMarks'] = { fg = colors.green, bg = colors.shade_green, sp = colors.low_green, style = 'bold' }
 
   return p
