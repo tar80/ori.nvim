@@ -53,7 +53,7 @@ return function(opts, colors)
     FloatFooter = { link = 'Normal' },
     NormalNC = { fg = colors.fg, bg = colors.bg },
     Pmenu = { fg = colors.fg, bg = colors.shade_blue },
-    PmenuSel = { bg = colors.matchsub, style = 'bold' },
+    PmenuSel = { fg = colors.matchsub, style = 'bold,reverse' },
     PmenuKind = { fg = colors.high_cyan, bg = colors.float },
     PmenuKindSel = { fg = colors.match, bg = colors.shade_cyan, style = 'reverse' },
     PmenuExtra = { fg = colors.comment, bg = colors.float },
@@ -67,7 +67,7 @@ return function(opts, colors)
     -- PopupNotification = not supported
     Question = { fg = colors.green },
     QuickFixLine = { bg = colors.float, style = 'bold' },
-    Search = { fg = colors.orange, bg = colors.highlight, style = 'bold' },
+    Search = { fg = colors.high_orange, bg = colors.highlight, style = 'bold' },
     SnippetTabstop = { link = 'Visual' },
     SpecialKey = { fg = colors.high_blue },
     SpellBad = { fg = colors.red, bg = colors.none, style = opts.styles.spell, sp = colors.red },
