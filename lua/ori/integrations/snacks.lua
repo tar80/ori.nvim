@@ -47,6 +47,16 @@ return function(opts, colors, p)
   p['SnacksPickerFile'] = { fg = colors.blue }
   p['SnacksPickerMatch'] = { fg = colors.bg, bg = colors.match, style = 'bold' }
   p['SnacksPickerTree'] = { fg = colors.low_gray }
+  p['SnacksDiffAddLineNr'] = { fg = colors.high_green, bg = colors.diff_change }
+  p['SnacksDiffDeleteLineNr'] = { fg = colors.high_red, bg =colors.diff_remove }
+  p['SnacksDiffContextLineNr'] = { bg = colors.bg }
+  -- p['SnacksDiffConflictLineNr'] = { bg = colors.bg }
+  -- p['SnacksDiffLabel'] = { fg = colors.low_gray }
+  -- p['SnacksDiffHeader'] = { fg = colors.low_gray }
+  p['SnacksDiffAdd'] = { bg = colors.diff_change }
+  p['SnacksDiffDelete'] = { bg = colors.diff_remove }
+  p['SnacksDiffContext'] = { bg = colors.bg }
+  -- p['SnacksDiffConflict'] = { fg = colors.low_gray }
 
   return p
 end

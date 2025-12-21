@@ -5,5 +5,8 @@ return function(opts, colors)
     StdoutMsg = { link = 'ModeMsg' },
     SnippetTabstop = { bg = colors.matchsub },
     SnippetTabstopActive = { bg = colors.shade_purple },
+    -- PmenuBorder = {},
+    -- PmenuShadow = {},
+    -- PmenuShadowThrough = {},
   }
 end

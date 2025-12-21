@@ -79,7 +79,7 @@ require("ori").setup({
         functions = "NONE",
         keywords = "NONE",
         readonly = "NONE", -- Used for @lsp.mode.readonly
-        references = "underline",
+        references = "underline", -- Used for LspReferenceXXX
         spell = "undercurl",
         strings = "NONE",
         variables = "NONE",
