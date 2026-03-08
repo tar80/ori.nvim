@@ -1,7 +1,5 @@
 # ![ori.nvim](https://github.com/user-attachments/assets/0216530d-f5d4-40b2-b760-0332f292b864)
 
-This is test message.
-
 ## Requirements
 
 - Neovim >= 0.12.0
@@ -9,7 +7,8 @@ This is test message.
 ## Features
 
 ori.nvim supports creating your own palette based on either the light or dark palette.
-To create a palette, you must specify the palette `name`, `mode`, `background hex`, and `hsl` values.
+By using the **HSLuv** color space, it ensures perceptually uniform brightness when blending colors with your background.
+To create a palette, you must specify the palette `name`, `mode`, `background hex`, and `ratio` values.
 
 Here are some sample palettes.
 
@@ -21,36 +20,36 @@ In addition to the eight basic colors
 `gray`, `blue`, `cyan`, `green`, `olive`, `orange`, `red`, `purple`  
 the plugin has the following component colors:  
 
-|key         | description                  |
+|Key         | Description                  |
 |:-          |:-                            |
-|fg          | foreground                   |
-|bg          | background                   |
-|high_xxx    | high basic colors            |
-|low_xxx     | low basic colors             |
-|shade_xxx   | basic colors for background  |
-|nc          | non-current buffer background|
-|float       | float window                 |
-|border      | buffer border line           |
-|selection   | visual selection             |
-|highlight   | highlight texts              |
-|match       | match item color             |
-|matchsub    | sub-match item color         |
-|diff_add    | added diff range             |
-|diff_change | changed diff range           |
-|diff_remove | removed diff range           |
-|diff_text   | changed text                 |
-|diff_text_bg| changed text background      |
+|fg          | Foreground                   |
+|bg          | Background                   |
+|high_xxx    | High basic colors            |
+|low_xxx     | Low basic colors             |
+|shade_xxx   | Basic colors for background  |
+|nc          | Non-current buffer background|
+|float       | Float window                 |
+|border      | Buffer border line           |
+|selection   | Visual selection background  |
+|highlight   | Highlight text               |
+|match       | Match item color             |
+|matchsub    | Sub-match item color         |
+|diff_add    | Added diff range             |
+|diff_change | Changed diff range           |
+|diff_remove | Removed diff range           |
+|diff_text   | Changed text                 |
+|diff_text_bg| Changed text background      |
 
 ## Commands
 
 - `OriSwitchTheme [<palette>]`
-  - Switches between light and dark palettes. You can also specify the palette.
+  - Switches between light and dark palettes. You can also specify a specific palette name.
 - `OriCreatePalette`
-  - Generate a new palette based on the light or dark palette.
+  - Interactive command to generate a new palette harmonized with your chosen background hex.
 - `OriDeletePalette`
-  - Delete the palette you created.
+  - Select and delete a custom palette you created.
 
-## configuration
+## Configuration
 
 <details>
 <summary> Click to see default configuration </summary>
@@ -67,16 +66,16 @@ require("ori").setup({
     theme = {
         light = "light",
         dark = "dark"
-    }
-    --[[ Hlgroups that force guibg to "NONE".
-    --   To make the background transparent, add the following hlgroups to your settings:
-    --   {'Normal', 'NormalNC', 'NormalFloat', 'LineNr', 'SignColumn', 'FloatBorder', 'FloatTitle', 'FloatFooter'}
-    --]]
+    },
+    -- Hlgroups that force bg to "NONE".
+    -- To make the background transparent, add the following hlgroups to your settings:
+    -- {'Normal', 'NormalNC', 'NormalFloat', 'LineNr', 'SignColumn', 'FloatBorder', 'FloatTitle', 'FloatFooter'}
+    --
     transparent = {},
     styles = {
         -- "NONE"|"[bold][,underline][,italic][,...]"]
         comments = "NONE",
-        depricated = "NONE",
+        deprecated = "NONE",
         diagnostics = "undercurl",
         functions = "NONE",
         keywords = "NONE",
