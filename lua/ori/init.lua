@@ -59,7 +59,7 @@ function ori.load(name)
   local highlights = integrations.get_highlights(opts, colors, custom_highlights)
   if #opts.transparent > 0 then
     vim.iter(opts.transparent):each(function(v)
-      highlights[v] = { guibg = 'NONE' }
+      highlights[v] = { bg = 'NONE' }
     end)
   end
   for hlgroup, param in pairs(highlights) do

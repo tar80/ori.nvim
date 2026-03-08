@@ -145,7 +145,10 @@ function M.setup(UNIQUE_NAME, DEFAULT_PALETTES)
       return
     end
     opts.mode = choice == 1 and 'light' or 'dark'
-    local ok1, colors = pcall(require, ('ori.colors.%s'):format(opts.mode))
+    local modname = ('ori.colors.%s'):format(opts.mode)
+    package.loaded[modname] = nil
+
+    local ok1, colors = pcall(require, modname)
     if not ok1 then
       local msg1 = ('Could not read template "%s.lua"'):format(opts.mode)
       _notify(msg1, 'ERROR')
@@ -179,6 +182,7 @@ function M.setup(UNIQUE_NAME, DEFAULT_PALETTES)
       _notify('An invalid luminance ratio was specified.', 'ERROR')
       return
     end
+
     local palette = M.harmonize_palette(colors, hex, opts)
     local path = ('%s/colors/user/%s.lua'):format(source_path(), name)
 
