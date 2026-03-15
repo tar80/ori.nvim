@@ -18,12 +18,12 @@ return function(opts, colors, p)
   p['GitSignsAddCul'] = { fg = colors.bg, bg = colors.high_blue }
   p['GitSignsChangeCul'] = { fg = colors.bg, bg = colors.high_green }
   p['GitSignsDeleteCul'] = { fg = colors.bg, bg = colors.high_red }
-  p['GitSignsAddPreview'] = { fg = colors.cyan }
-  p['GitSignsDeletePreview'] = { fg = colors.red }
+  p['GitSignsAddPreview'] = { bg = colors.diff_change }
+  p['GitSignsDeletePreview'] = { bg = colors.diff_remove }
   p['GitSignsCurrentLineBlame'] = { fg = colors.low_purple, bg = colors.shade_purple, style = opts.styles.virtualtext }
-  p['GitSignsAddInline'] = { bg = colors.shade_cyan }
-  p['GitSignsChangeInline'] = { bg = colors.shade_green }
-  p['GitSignsDeleteInline'] = { bg = colors.shade_red }
+  p['GitSignsAddInline'] = { fg = colors.high_blue, bg = colors.diff_add }
+  p['GitSignsChangeInline'] = { fg = colors.high_green, bg = colors.diff_change }
+  p['GitSignsDeleteInline'] = { fg = colors.high_red, bg = colors.diff_remove }
   -- p['GitSignsAddLnInline'] = { link = 'GitSignsAddInline' }
   -- p['GitSignsChangeLnInline'] = { link = 'GitSignsChangeInline' }
   -- p['GitSignsDeleteLnInline'] = { link = 'GitSignsDeleteInline' }

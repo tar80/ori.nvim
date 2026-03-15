@@ -41,6 +41,6 @@ return function(opts, colors)
     DiagnosticSignHint = { fg = colors.hint },
     DiagnosticSignOk = { fg = colors.ok },
     DiagnosticDeprecated = { fg = colors.high_red, sp = colors.high_red, style = opts.styles.deprecated },
-    DiagnosticUnnecessary = { bg = colors.shade_purple },
+    -- DiagnosticUnnecessary = { bg = colors.shade_purple },
   }
 end

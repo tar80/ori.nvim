@@ -7,7 +7,7 @@ return function(opts, colors, p)
   p['BlinkCmpLabel'] = { fg = colors.gray }
   p['BlinkCmpLabelDeprecated'] = { fg = colors.red, sp = colors.red, style = opts.styles.deprecated }
   p['BlinkCmpLabelMatch'] = { fg = colors.match, style = 'bold' }
-  p['BlinkCmpLabelDetail'] = { fg = '#FFFFFF' } ---TODO: check
+  p['BlinkCmpLabelDetail'] = { fg = colors.hint }
   p['BlinkCmpLabelDescription'] = { link = 'PmenuExtra' }
   p['BlinkCmpSource'] = { fg = '#888800' } --TODO;check
   p['BlinkCmpGhostText'] = { fg = colors.low_gray, style = 'italic' }
