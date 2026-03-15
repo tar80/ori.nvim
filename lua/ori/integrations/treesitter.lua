@@ -41,7 +41,7 @@ return function(opts, colors)
     ['@markup'] = { fg = colors.fg },
     ['@markup.environment'] = { link = '@text.environment' },
     ['@markup.environment.name'] = { link = '@text.environment.name' },
-    ['@markup.heading']  = { fg = colors.bg, bg = colors.fg, style = 'bold' },
+    ['@markup.heading'] = { fg = colors.bg, bg = colors.fg, style = 'bold' },
     ['@markup.heading.1'] = { fg = colors.bg, bg = colors.high_cyan, style = 'bold' },
     ['@markup.heading.2'] = { fg = colors.bg, bg = colors.cyan, style = 'bold' },
     ['@markup.heading.3'] = { fg = colors.bg, bg = colors.low_cyan, style = 'bold' },

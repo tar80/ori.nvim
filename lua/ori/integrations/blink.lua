@@ -24,7 +24,7 @@ return function(opts, colors, p)
   p['BlinkCmpKindUnit'] = { fg = colors.low_green }
   p['BlinkCmpKindEvent'] = { fg = colors.low_blue }
   p['BlinkCmpKindColor'] = { fg = colors.low_red }
-  p['BlinkCmpKindVariable'] = { fg =  colors.low_purple }
+  p['BlinkCmpKindVariable'] = { fg = colors.low_purple }
   p['BlinkCmpKindClass'] = { fg = colors.olow_live }
   p['BlinkCmpKindConstant'] = { fg = colors.low_gray }
   p['BlinkCmpKindConstructor'] = { fg = colors.low_olive }

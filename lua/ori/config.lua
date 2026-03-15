@@ -5,7 +5,7 @@ local _default = {
   fade_nc = false,
   theme = {
     light = 'light',
-    dark = 'dark'
+    dark = 'dark',
   },
   transparent = {},
   styles = {
@@ -35,7 +35,7 @@ local _default = {
     lsp = true,
     lsp_semantic = true,
   },
-  user_integrations = {}
+  user_integrations = {},
 }
 
 ---@param user_spec UserSpec
