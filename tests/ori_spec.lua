@@ -1,4 +1,3 @@
----@diagnostic disable: param-type-mismatch, undefined-field
 local assert = require('luassert')
 local stub = require('luassert.stub')
 local match = require('luassert.match')
