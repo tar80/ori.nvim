@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-field
 local assert = require('luassert')
 local stub = require('luassert.stub')
+local spy = require('luassert.spy')
 
 describe('command', function()
   local command, hl_mock, file_mock, config_mock, colors_mock
@@ -36,10 +37,15 @@ describe('command', function()
       local palette = {
         bg = '#1e1e1e',
         fg = '#ffffff',
-        match_test = '#ff0000',
+        match_test = '#0000ff',
       }
       local bg_hex = '#000000'
-      local opts = { mode = 'dark', h = 0.1, s = 0, l = 0 }
+      local opts = {
+        mode = 'dark',
+        h = 0.5,
+        s = 0,
+        l = 0,
+      }
 
       local result = command.harmonize_palette(palette, bg_hex, opts)
 
@@ -56,7 +62,7 @@ describe('command', function()
     end)
   end)
 
-  describe('.setup() and commands', function()
+  describe('.setup()', function()
     local create_cmd_stub
 
     before_each(function()
@@ -73,32 +79,97 @@ describe('command', function()
       assert.stub(create_cmd_stub).was_called(3)
     end)
 
-    it('OriCreatePalette should handle user input cancellation', function()
-      local input_stub = stub(vim.ui, 'input', function(_, cb)
-        cb('')
-      end)
-      local notify_stub = stub(vim, 'notify')
-
-      command.setup('ori.nvim', { 'dark', 'light' })
-
-      local create_cb = nil
-      for _, call in ipairs(create_cmd_stub.calls) do
-        if call.vals[1] == 'OriCreatePalette' then
-          create_cb = call.vals[2]
-          break
+    describe('ori.command', function()
+      before_each(function()
+        for mod, _ in pairs(package.loaded) do
+          if mod:match('^ori%.') then
+            package.loaded[mod] = nil
+          end
         end
-      end
 
-      if create_cb then
-        create_cb()
-      end
+        hl_mock = {
+          to_rgb = stub.new().returns({ 255, 255, 255 }),
+          combine = stub.new().returns(function(t, _)
+            return t[1], t[2], t[3]
+          end),
+          estimate_bg_mode = stub.new().returns('dark'),
+        }
+        file_mock = {
+          write = stub.new().returns(true, 'File created successfully'),
+        }
+        config_mock = {
+          opts = {
+            theme = { dark = 'dark', light = 'light' },
+            background = 'dark',
+          },
+        }
 
-      assert.stub(notify_stub).was_called()
-      local last_call = notify_stub.calls[#notify_stub.calls]
-      assert.are.equal('ori.nvim', last_call.vals[3].title)
+        package.loaded['ori.colors.dark'] = { bg = '#000000', fg = '#ffffff' }
 
-      input_stub:revert()
-      notify_stub:revert()
+        colors_mock = {
+          get_modname = stub.new().returns('ori.colors.dark'),
+        }
+
+        package.loaded['ori.highlight'] = hl_mock
+        package.loaded['ori.file'] = file_mock
+        package.loaded['ori.config'] = config_mock
+        package.loaded['ori.colors'] = colors_mock
+
+        command = require('ori.command')
+      end)
+
+      describe('interactive_wizard (via OriCreatePalette)', function()
+        it('should complete the full wizard flow and save the file', function()
+          local input_stub = stub(vim.ui, 'input')
+          local confirm_stub = stub(vim.fn, 'confirm').returns(2)
+          local notify_stub = stub(vim, 'notify')
+
+          local ori_mock = { load = spy.new() }
+          package.loaded['ori'] = ori_mock
+
+          local create_cb = nil
+          create_cmd_stub = stub(vim.api, 'nvim_create_user_command', function(name, cb, _)
+            if name == 'OriCreatePalette' then
+              create_cb = cb
+            end
+          end)
+
+          command.setup('ori.nvim', { 'dark', 'light' })
+          assert.is_not_nil(create_cb, 'OriCreatePalette callback was not captured')
+          local name = 'my_theme'
+
+          local inputs = {
+            name,
+            '#1a1b26',
+            '5',
+            '0',
+            '0',
+          }
+          local input_idx = 0
+          input_stub.invokes(function(_, cb)
+            input_idx = input_idx + 1
+            cb(inputs[input_idx])
+          end)
+
+          create_cb({ args = '' })
+
+          assert.stub(file_mock.write).was_called(1)
+
+          local write_call = file_mock.write.calls[1]
+          assert.is_true(write_call.vals[1]:find(name .. '.lua$') ~= nil)
+
+          assert.spy(ori_mock.load).was_called_with(name)
+
+          assert
+            .stub(notify_stub)
+            .was_called_with('Palette created: ' .. name, vim.log.levels.INFO, { title = 'ori.nvim' })
+
+          input_stub:revert()
+          confirm_stub:revert()
+          notify_stub:revert()
+          create_cmd_stub:revert()
+        end)
+      end)
     end)
   end)
 end)
