@@ -1,7 +1,7 @@
 return function(opts, colors, p)
   -- p['BlinkCmpMenu'] = { link = 'Pmenu' }
   -- p['BlinkCmpMenuBorder'] = { link = 'Pmenu' }
-  -- p['BlinkCmpMenuSelection'] = { link = 'PmenuSel' }
+  p['BlinkCmpMenuSelection'] = { link = 'PmenuMatchSel' }
   -- p['BlinkCmpScrollBarThumb'] = { link = 'PmenuThumb' }
   -- p['BlinkCmpScrollBarGutter'] = { link = 'PmenuSbar' }
   p['BlinkCmpLabel'] = { fg = colors.gray }

@@ -44,7 +44,7 @@ return function(opts, colors, p)
   p['SnacksPickerPickWinCurrent'] = { fg = colors.bg, bg = colors.high_cyan }
   p['SnacksPickerPreviewTitle'] = { fg = colors.gray }
   p['SnacksPickerDir'] = { fg = colors.low_blue, style = opts.styles.comments }
-  p['SnacksPickerFile'] = { fg = colors.blue }
+  p['SnacksPickerFile'] = { fg = colors.blue, style = 'bold' }
   p['SnacksPickerMatch'] = { fg = colors.bg, bg = colors.match, style = 'bold' }
   p['SnacksPickerTree'] = { fg = colors.low_gray }
   p['SnacksDiffAddLineNr'] = { fg = colors.high_green, bg = colors.diff_change }

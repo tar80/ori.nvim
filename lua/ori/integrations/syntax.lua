@@ -14,7 +14,7 @@ return function(opts, colors)
     Boolean = { fg = colors.orange },
     Label = { fg = colors.high_purple },
     Operator = { fg = colors.red },
-    Keyword = { fg = colors.gray, style = opts.styles.keywords },
+    Keyword = { style = opts.styles.keywords },
     Exception = { fg = colors.purple },
     PreProc = { fg = colors.purple },
     Include = { fg = colors.high_cyan },
