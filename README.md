@@ -1,4 +1,4 @@
-# ![ori.nvim](https://github.com/user-attachments/assets/0216530d-f5d4-40b2-b760-0332f292b864)
+# ![ori.nvim](https://github.com/user-attachments/assets/1f5564e4-71b0-4d72-8350-f9d917351486)
 
 ## Requirements
 
@@ -6,13 +6,13 @@
 
 ## Features
 
-ori.nvim supports creating your own palette based on either the light or dark palette.
-By using the **HSLuv** color space, it ensures perceptually uniform brightness when blending colors with your background.
-To create a palette, you must specify the palette `name`, `mode`, `background hex`, and `ratio` values.
+**ori.nvim** is a colorscheme with a built-in palette generator.
+It lets you create your own colorscheme that harmonizes naturally
+with your favorite background color.
 
-Here are some sample palettes.
+Here are some sample palettes generated with `OriCreatePalette`.
 
-![palettes](https://github.com/user-attachments/assets/b7beda9c-53b0-4a9e-8cdb-ea140867c757)
+![palettes](https://github.com/user-attachments/assets/dee43b22-5be3-4f61-a387-35d784cff232)
 
 ### Palette colors
 
@@ -43,11 +43,11 @@ the plugin has the following component colors:
 ## Commands
 
 - `OriSwitchTheme [<palette>]`
-  - Switches between light and dark palettes. You can also specify a specific palette name.
+  - Switches between light and dark modes, or a specific palette.
 - `OriCreatePalette`
   - Interactive command to generate a new palette harmonized with your chosen background hex.
 - `OriDeletePalette`
-  - Select and delete a custom palette you created.
+  - Select and delete a custom palette you no longer need.
 
 ## Configuration
 
@@ -98,11 +98,13 @@ require("ori").setup({
     custom_highlights = function(opts, colors)
         return {
           light = {
-              hlgroup1 = {fg = "#000000", bg = "#FFFFFF", style = "underline"}
-              hlgroup2 = {fg = colors.fg, bg = colors.bg, style = opts.styles.keywords}
+              ['@comment.documentation'] = { style = 'dim,italic' },
+              ['Matchwith'] = { sp = colors.high_cyan, style = 'blink' }
+
           },
           dark = {
-              hlgroup1 = {fg = "#DFDFDF", bg = "#222222", style = "underline"}
+              ['@comment.documentation'] = { style = 'dim,italic' },
+              ['Matchwith'] = { sp = colors.high_cyan, style = 'blink' }
           },
         }
     end,
@@ -132,8 +134,6 @@ require("ori").setup({
         render_markdown = false,
         rereope = false,
         sandwich = false,
-        skkeleton_henkan_highlight = false,
-        skkeleton_indicator = false,
         snacks = false,
         staba = false,
         trouble = false,
@@ -146,6 +146,8 @@ require("ori").setup({
         noice = false,
         notify = false,
         rainbow_delimiters = false, -- false|`high`|`low` Can choose one of either "high" or "low" contrast
+        skkeleton_henkan_highlight = false,
+        skkeleton_indicator = false,
         telescope = false,
     },
     -- User's own specified plugins highlight groups
