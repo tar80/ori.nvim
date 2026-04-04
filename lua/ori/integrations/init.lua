@@ -79,7 +79,7 @@ function M.get_highlights(opts, colors, custom_highlights)
 
   terminal_highlights(colors)
 
-  hlgroups = vim.tbl_deep_extend('force', hlgroups, plugins, custom_highlights)
+  hlgroups = vim.tbl_extend('force', hlgroups, plugins, custom_highlights)
 
   return hlgroups
 end
